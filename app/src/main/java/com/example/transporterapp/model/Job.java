@@ -1,12 +1,24 @@
 package com.example.transporterapp.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.Date;
 
 public class Job {
+
+  @SerializedName("id")
   private int id;
+
+  @SerializedName("origin")
   private String origin;
+
+  @SerializedName("destination")
   private String destination;
+
+  @SerializedName("date")
   private Date date;
+
+  @SerializedName("price")
   private int price;
 
   public int getId() {
