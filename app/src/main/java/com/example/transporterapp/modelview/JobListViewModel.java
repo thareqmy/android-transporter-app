@@ -1,19 +1,25 @@
 package com.example.transporterapp.modelview;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import com.example.transporterapp.model.Job;
 import com.example.transporterapp.service.JobDetail;
+
 import java.util.List;
 
-public class JobListViewModel {
+
+import androidx.annotation.NonNull;
+
+public class JobListViewModel extends AndroidViewModel {
   private final LiveData<List<Job>> jobListObservable;
 
-  public JobListViewModel(Application application) {
+
+  public JobListViewModel(@NonNull JobDetail jobDetail, @NonNull Application application) {
     super(application);
 
     // If any transformation is needed, this can be simply done by Transformations class ...
-    jobListObservable = JobDetail.getJobList();
+    jobListObservable = jobDetail.getJobList();
   }
 
   /**

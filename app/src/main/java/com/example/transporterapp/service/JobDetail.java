@@ -1,7 +1,7 @@
 package com.example.transporterapp.service;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import com.example.transporterapp.model.Job;
 import com.example.transporterapp.model.JobList;
 import java.util.List;
@@ -26,7 +26,6 @@ public class JobDetail {
       }
       @Override
       public void onFailure(Call<JobList> call, Throwable t) {
-        // TODO better error handling in part #2 ...
         data.setValue(null);
       }
 
