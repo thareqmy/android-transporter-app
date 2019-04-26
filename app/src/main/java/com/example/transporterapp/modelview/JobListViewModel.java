@@ -10,11 +10,13 @@ import java.util.List;
 
 
 import androidx.annotation.NonNull;
+import javax.inject.Inject;
 
 public class JobListViewModel extends AndroidViewModel {
   private final LiveData<List<Job>> jobListObservable;
 
 
+  @Inject
   public JobListViewModel(@NonNull JobDetail jobDetail, @NonNull Application application) {
     super(application);
 
